@@ -99,15 +99,14 @@ $(function() {
             /* TODO: Write a test that ensures when a new feed is loaded
              * by the loadFeed function that the content actually changes.
              * Remember, loadFeed() is asynchronous. */
-             
              var prev = null;
              beforeEach(function (done) {
-                prev = $('.header-title').text();
+                prev = $('.feed').html();
                 loadFeed(1, done);
              });
 
              it('content has changed', function () {
-                expect($('.header-title')).not.toBe(prev);
+                expect($('.feed').html).not.toBe(prev);
              });
         });
     });
